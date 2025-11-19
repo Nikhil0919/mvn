@@ -1,0 +1,43 @@
+# GET all books
+curl -v http://localhost:18083/api/books
+
+# GET a single book by id
+curl -v http://localhost:18083/api/books/1
+
+# GET with pagination / sorting
+curl -v "http://localhost:18083/api/books?page=0&size=20&sort=title,asc"
+
+# Search by title (if supported)
+curl -v "http://localhost:18083/api/books/search?title=Hobbit"
+
+# Create a book (POST)
+curl -v http://localhost:18083/api/books \
+  -H "Content-Type: application/json" \
+  -d '{"title":"The Hobbit","author":"J.R.R. Tolkien","isbn":"9780261103344","publishedDate":"1937-09-21","available":true}'
+
+# Replace a book (PUT)
+curl -v -X PUT http://localhost:18083/api/books/1 \
+  -H "Content-Type: application/json" \
+  -d '{"title":"The Hobbit","author":"J.R.R. Tolkien","isbn":"9780261103344","publishedDate":"1937-09-21","available":true}'
+
+# Partial update (PATCH)
+curl -v -X PATCH http://localhost:18083/api/books/1 \
+  -H "Content-Type: application/json" \
+  -d '{"available":false}'
+
+# Delete a book
+curl -v -X DELETE http://localhost:18083/api/books/1
+
+# Checkout a book (if supported)
+curl -v -X POST http://localhost:18083/api/books/1/checkout \
+  -H "Content-Type: application/json" \
+  -d '{"userId":1,"dueDate":"2025-12-31"}'
+
+# Return a book (if supported)
+curl -v -X POST http://localhost:18083/api/books/1/return \
+  -H "Content-Type: application/json" \
+  -d '{"userId":1}'
+
+# Upload a cover image (multipart/form-data)
+curl -v -X POST http://localhost:18083/api/books/1/cover \
+  -F "file=@cover.jpg"

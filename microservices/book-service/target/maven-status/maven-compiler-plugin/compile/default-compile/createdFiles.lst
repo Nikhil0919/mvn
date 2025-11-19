@@ -1,0 +1,8 @@
+com/library/bookservice/dto/BookDTO.class
+com/library/bookservice/controller/BookController$SimpleResponse.class
+com/library/bookservice/controller/BookController.class
+com/library/bookservice/repository/BookRepository.class
+com/library/bookservice/service/BookService.class
+com/library/bookservice/controller/BookController$ReserveRequest.class
+com/library/bookservice/entity/Book.class
+com/library/bookservice/BookServiceApplication.class

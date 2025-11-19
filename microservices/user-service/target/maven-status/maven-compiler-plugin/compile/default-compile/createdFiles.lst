@@ -1,0 +1,9 @@
+com/library/userservice/controller/UserController.class
+com/library/userservice/dto/UserDTO.class
+com/library/userservice/UserServiceApplication.class
+com/library/userservice/repository/UserRepository.class
+com/library/userservice/controller/UserController$ValidateResponse.class
+com/library/userservice/controller/UserController$SimpleError.class
+com/library/userservice/service/UserService.class
+com/library/userservice/entity/User.class
+com/library/userservice/controller/UserController$ValidateRequest.class

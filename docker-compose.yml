@@ -1,0 +1,30 @@
+services:
+  book-service:
+    build:
+      context: ./microservices/book-service
+      dockerfile: Dockerfile
+    image: book-service:latest
+    ports:
+      - "18081:8081"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+
+  user-service:
+    build:
+      context: ./microservices/user-service
+      dockerfile: Dockerfile
+    image: user-service:latest
+    ports:
+      - "18082:8082"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+
+  borrow-service:
+    build:
+      context: ./microservices/borrow-service
+      dockerfile: Dockerfile
+    image: borrow-service:latest
+    ports:
+      - "18083:8083"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
